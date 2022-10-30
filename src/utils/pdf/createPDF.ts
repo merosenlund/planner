@@ -8,23 +8,22 @@ import { DailyPage } from "./daily/DailyPage";
 import { OtherTasksLayout } from "./daily/OtherTasks";
 import { DailyNotesLayout } from "./dailyNotes/Body";
 import { DailyNotesPage } from "./dailyNotes/DailyNotespage";
+import { NoBorders, WeekViewLayout, WeekendLayout } from "./weeklyPreview/Body";
+import { WeeklyPreview } from "./weeklyPreview/WeeklyPreview";
 
 let pageCount = 1;
 
-async function createPdf() {
-  const days = [
-    ["Friday", "10", "28"],
-    ["Saturday", "10", "29"],
-    ["Sunday", "10", "30"],
-    ["Monday", "10", "31"],
-    ["Tuesday", "11", "1"],
-    ["Wednesday", "11", "2"],
-    ["Thursday", "11", "3"],
-    ["Friday", "11", "4"],
-    ["Saturday", "11", "5"],
-    ["Sunday", "11", "6"],
+async function createPdf(startDate, endDate) {
+  const days: [string, string, string][] = [
+    ["Monday", "11", "7"],
+    ["Tuesday", "11", "8"],
+    ["Wednesday", "11", "9"],
+    ["Thursday", "11", "10"],
+    ["Friday", "11", "11"],
+    ["Saturday", "11", "12"],
+    ["Sunday", "11", "13"],
   ];
-  const pages = [DailyNotesPage()];
+  const pages = [DailyNotesPage(), WeeklyPreview("11", "6")];
   for (const day of days) {
     pages.push(DailyPage(day[0], day[1], day[2]));
     pages.push(DailyNotesPage());
@@ -49,6 +48,9 @@ async function createPdf() {
       OtherTasksLayout,
       TimeLineLayout,
       DailyNotesLayout,
+      NoBorders,
+      WeekViewLayout,
+      WeekendLayout,
     })
     .open();
 }

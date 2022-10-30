@@ -1,6 +1,6 @@
 import { Content } from "pdfmake/interfaces";
 
-export const DailyBig3Section: () => Content = () => {
+export const DailyBig3Section: (width: number) => Content = (width) => {
   return [
     {
       columns: [
@@ -15,17 +15,17 @@ export const DailyBig3Section: () => Content = () => {
       fontSize: 6,
       margin: [0, 5, 0, 0],
     },
-    DailyBig3SectionDivider(),
-    DailyBig3(),
-    DailyBig3SectionDivider(),
-    DailyBig3(),
-    DailyBig3SectionDivider(),
-    DailyBig3(),
-    DailyBig3SectionDivider(),
+    DailyBig3SectionDivider(width),
+    DailyBig3(width),
+    DailyBig3SectionDivider(width),
+    DailyBig3(width),
+    DailyBig3SectionDivider(width),
+    DailyBig3(width),
+    DailyBig3SectionDivider(width),
   ];
 };
 
-const DailyBig3: () => Content = () => {
+const DailyBig3: (width: number) => Content = (width) => {
   return {
     columns: [
       {
@@ -39,7 +39,7 @@ const DailyBig3: () => Content = () => {
           {
             type: "line",
             x1: 0,
-            x2: 130,
+            x2: width - 20,
             y1: 0,
             y2: 0,
             lineWidth: 0.125,
@@ -48,7 +48,7 @@ const DailyBig3: () => Content = () => {
           {
             type: "line",
             x1: 0,
-            x2: 130,
+            x2: width - 20,
             y1: 10,
             y2: 10,
             lineWidth: 0.125,
@@ -61,13 +61,13 @@ const DailyBig3: () => Content = () => {
   };
 };
 
-const DailyBig3SectionDivider: () => Content = () => {
+const DailyBig3SectionDivider: (width: number) => Content = (width) => {
   return {
     canvas: [
       {
         type: "line",
         x1: 0,
-        x2: 150,
+        x2: width,
         y1: 0,
         y2: 0,
         lineWidth: 0.25,

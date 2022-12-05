@@ -1,5 +1,5 @@
 import { Column, Content, CustomTableLayout } from "pdfmake/interfaces";
-import { DailyBig3Section } from "../daily/DailyBig3";
+import { Big3Section } from "../daily/DailyBig3";
 
 export const Body: () => Content = () => {
   return [
@@ -84,7 +84,7 @@ export const Body: () => Content = () => {
       fontSize: 6,
       margin: [0, -3, 0, 5],
     },
-    DailyBig3Section(235),
+    Big3Section("WEEKLY", 235),
     StepHeading(
       6,
       "Self-Care Planner",

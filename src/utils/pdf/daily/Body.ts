@@ -1,11 +1,11 @@
 import { Column, Content, CustomTableLayout } from "pdfmake/interfaces";
-import { DailyBig3Section } from "./DailyBig3";
+import { Big3Section } from "./DailyBig3";
 import { OtherTasksSection } from "./OtherTasks";
 
 const leftColumn: (day: string) => Column = (day) => {
   return {
     width: "70%",
-    stack: [day, DailyBig3Section(150), OtherTasksSection()],
+    stack: [day, Big3Section("DAILY", 150), OtherTasksSection()],
   };
 };
 

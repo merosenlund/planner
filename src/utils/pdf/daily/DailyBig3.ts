@@ -1,12 +1,15 @@
 import { Content } from "pdfmake/interfaces";
 
-export const DailyBig3Section: (width: number) => Content = (width) => {
+export const Big3Section: (name: string, width: number) => Content = (
+  name,
+  width
+) => {
   return [
     {
       columns: [
         {
           width: "auto",
-          text: "DAILY BIG 3",
+          text: `${name} BIG 3`,
           margin: [0, 0, 5, 0],
           bold: true,
         },
@@ -15,17 +18,17 @@ export const DailyBig3Section: (width: number) => Content = (width) => {
       fontSize: 6,
       margin: [0, 5, 0, 0],
     },
-    DailyBig3SectionDivider(width),
-    DailyBig3(width),
-    DailyBig3SectionDivider(width),
-    DailyBig3(width),
-    DailyBig3SectionDivider(width),
-    DailyBig3(width),
-    DailyBig3SectionDivider(width),
+    Big3SectionDivider(width),
+    Big3(width),
+    Big3SectionDivider(width),
+    Big3(width),
+    Big3SectionDivider(width),
+    Big3(width),
+    Big3SectionDivider(width),
   ];
 };
 
-const DailyBig3: (width: number) => Content = (width) => {
+const Big3: (width: number) => Content = (width) => {
   return {
     columns: [
       {
@@ -61,7 +64,7 @@ const DailyBig3: (width: number) => Content = (width) => {
   };
 };
 
-const DailyBig3SectionDivider: (width: number) => Content = (width) => {
+const Big3SectionDivider: (width: number) => Content = (width) => {
   return {
     canvas: [
       {

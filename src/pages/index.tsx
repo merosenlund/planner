@@ -15,7 +15,7 @@ const Home: NextPage = () => {
     console.log(newDate);
     console.log(startDate);
     console.log(endDate);
-    // createPdf(startDate, endDate);
+    createPdf(startDate, endDate);
   };
 
   return (

@@ -32,7 +32,7 @@ export const Body: () => Content = () => {
     },
     StepTable(4, ["", "", ""], ["auto", "*", "auto"]),
     {
-      text: "What worked what didn't?",
+      text: "What worked? What didn't?",
       fontSize: 6,
       italics: true,
       margin: [0, 5],
